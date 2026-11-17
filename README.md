@@ -1,85 +1,75 @@
-# Moshpit — Demo 1 Foundation
+# Moshpit — Phase 1 Core Sharing + Phase 2 Playback Foundation
 
-Starter monorepo para iniciar Demo 1. Está preparado para abrirse como workspace en **Visual Studio Code**. También puede abrirse como carpeta en Visual Studio 2022, aunque no incluye una solución `.sln` porque el stack es Node.js/TypeScript.
+Moshpit es una plataforma musical colaborativa **sharing-first**. Su recorrido principal conecta Setlists persistentes, Pits sociales y Live Sets colaborativos. Este proyecto mantiene un único backend modular; las demos incrementan la misma base de código.
 
-## Principio de infraestructura
+## Principios de producto y datos
 
-**Moshpit no depende de Docker ni de Podman.** Son herramientas opcionales para empaquetar y ejecutar servicios. El backend también puede desarrollarse y desplegarse como proceso Node.js nativo; PostgreSQL y Centrifugo pueden ejecutarse como servicios/binarios nativos.
+- **Setlist:** colección persistente propiedad de Moshpit. En D1 es privada y editable por su propietario.
+- **Pit:** contexto social de una sesión; conserva su historial cuando termina.
+- **Live Set:** selección musical independiente asociada al Pit. Crear un Pit desde un Setlist copia sus referencias ordenadas; nunca mantiene sincronización implícita con el original.
+- **PlaybackSession:** estado compartido asociado al Pit y su Live Set. No es un reproductor ni representa el estado local de cada dispositivo.
+- **Música:** PostgreSQL conserva únicamente tracks referenciados por Setlists/Live Sets, no catálogos completos de terceros. Búsqueda federada y adapters reales pertenecen a D7.
+- **Bibliotecas locales:** no se escanean ni se requieren. Una importación local explícita podrá evaluarse como adapter futuro.
 
-El camino recomendado para este entorno Windows es desarrollo nativo, sin WSL2, Hyper-V, Docker Desktop ni Podman Desktop. La ruta contenedorizada queda disponible para otros equipos, CI o servidores Linux.
+## Stack
 
-## Qué incluye
+- Node.js 24 + TypeScript.
+- pnpm workspaces.
+- Fastify modular monolith.
+- PostgreSQL como fuente de verdad.
+- Centrifugo 6.10.3 como transporte realtime independiente.
+- React + TypeScript + Vite.
+- Contenedores Docker/Podman opcionales. Desarrollo nativo en Windows y Linux.
 
-- Monorepo `pnpm` con `apps/api`, `apps/web` y `packages/contracts`.
-- API Fastify con endpoints de health/readiness.
-- Prueba unitaria HTTP inicial para `GET /api/health` usando `node:test`.
-- PostgreSQL 17 y Centrifugo `v6.10.3` en Compose opcional.
-- Dockerfile opcional para compilar y ejecutar el backend Fastify.
-- Puerto interno `RealtimePublisher` y adaptador inicial para publicar mediante la API HTTP de Centrifugo.
-- Contratos TypeScript iniciales para identidad, Pit, PresenceLease, PlaybackSession y eventos realtime.
-- CI de GitHub Actions para typecheck, pruebas disponibles, build, validación de la imagen Docker opcional y sintaxis de scripts PowerShell.
-- Instrucciones para desarrollo nativo en Windows y despliegue nativo en Linux.
-
-## Requisitos para desarrollo nativo en Windows
+## Requisitos para Windows nativo
 
 - Windows 10/11 de 64 bits.
 - Node.js 24.
-- pnpm 10.34.9 (el proyecto declara esta versión en `packageManager`).
-- PostgreSQL 17 instalado como servicio de Windows.
-- Binario de Centrifugo `v6.10.3` para Windows x64.
+- pnpm 10.34.9.
+- PostgreSQL 17 como servicio local.
+- Centrifugo 6.10.3 para Windows x64.
 
-No se requiere Docker, Podman, WSL2 ni Hyper-V para este flujo.
+No se requiere Docker, Podman, WSL2 ni Hyper-V.
 
-## Inicio local en Windows (sin contenedores)
+## Inicio local
 
-El setup sigue el mismo patrón que el entorno Windows de JACKSTAFF: un script prepara PostgreSQL y un lanzador valida el entorno e inicia los tres procesos locales. **No necesitas abrir `psql` ni ejecutar SQL manualmente.**
-
-### Requisitos
-
-- Node.js 24.
-- pnpm `10.34.9`.
-- PostgreSQL 17 instalado como servicio de Windows.
-- Ejecutable Centrifugo `v6.10.3` para Windows x64.
-
-Consulta [`docs/local-development-windows.md`](docs/local-development-windows.md) para los enlaces de instalación y los pasos completos.
-
-### 1. Preparar la base de datos
-
-Inicia el servicio PostgreSQL desde `services.msc`. Luego abre PowerShell en la raíz del proyecto. Si es necesario, habilita scripts para esa ventana y ejecuta:
+1. Inicia el servicio PostgreSQL desde `services.msc`.
+2. Abre PowerShell en la raíz del proyecto y prepara la base:
 
 ```powershell
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 .\scripts\windows\Setup-Database.ps1
 ```
 
-El script localiza `psql.exe`, crea `.env` desde `.env.example` si hace falta, solicita la contraseña administrativa de `postgres` sin guardarla, y crea/actualiza el rol de aplicación y la base descritos por `DATABASE_URL`. Es idempotente y conserva la base si ya existe. El scaffold todavía no define tablas de dominio ni migraciones SQL.
+3. Configura `CENTRIFUGO_BIN` en `.env` y asegúrate de que las claves coincidan con `infra/centrifugo/config.json`.
+4. Instala o sincroniza las dependencias (también después de actualizar el proyecto):
 
-### 2. Configurar Centrifugo
-
-Descarga Centrifugo `v6.10.3`, extrae `centrifugo.exe` y configura su ruta en `.env`:
-
-```dotenv
-CENTRIFUGO_BIN=C:\Centrifugo\centrifugo.exe
+```powershell
+pnpm install
 ```
 
-También puedes agregar su carpeta al `PATH`. Los secretos locales de `.env` deben coincidir con `infra/centrifugo/config.json`.
-
-### 3. Iniciar la aplicación
+5. Inicia Moshpit:
 
 ```powershell
 .\Start-Moshpit.ps1
 ```
 
-El lanzador valida Node.js, pnpm, PostgreSQL, Centrifugo y los puertos locales; instala dependencias en la primera ejecución y abre tres ventanas de PowerShell (Centrifugo, API y frontend).
+El servidor API aplica las migraciones SQL pendientes al iniciar. También puedes ejecutarlas explícitamente:
+
+```powershell
+pnpm db:migrate
+```
+
+Direcciones locales:
 
 - Web: http://localhost:5173
 - API health: http://localhost:3000/api/health
 - API readiness: http://localhost:3000/api/ready
 - Centrifugo WebSocket: ws://localhost:8000/connection/websocket
 
-Detén cada proceso con `Ctrl+C` en su ventana. PostgreSQL permanece activo como servicio de Windows.
+El primer acceso crea una guest identity y guarda el token de sesión en el almacenamiento local del navegador. Las rutas profundas (`/pits/:pitId` y `/setlists/:setlistId`) permiten recuperar directamente una sala o colección al recargar. `sessionStorage` conserva por pestaña el Pit activo como protección de selección; no concede acceso. En cada recuperación, el backend vuelve a validar la identidad, la membresía y el rol. Todavía no existe account linking ni recuperación multidispositivo.
 
-### Verificaciones locales
+## Comprobaciones
 
 ```powershell
 pnpm typecheck
@@ -87,91 +77,113 @@ pnpm test
 pnpm build
 ```
 
-`pnpm test` ejecuta la prueba unitaria actual de health. Las futuras pruebas de integración podrán utilizar PostgreSQL/Centrifugo nativos o remotos; no requieren Docker en este equipo.
+Las pruebas de integración D1 usan una base de datos PostgreSQL dedicada. Configura `MOSHPIT_TEST_DATABASE_URL` antes de ejecutar `pnpm test` para habilitarlas. Sin esa variable, la prueba de integración se omite y siguen ejecutándose las pruebas unitarias/API que no requieren PostgreSQL.
 
-## Infraestructura contenedorizada (opcional)
+## Qué incluye esta entrega
 
-La Compose stack levanta PostgreSQL, Centrifugo y el backend Fastify. Úsala solamente en un equipo/servidor que ya disponga de Docker Compose o Podman Compose.
+### Implementado en el primer corte de D1
 
-Con Docker:
+- Guest identity, bearer session token hasheado en base de datos y sesión deslizante de 30 días.
+- Las rutas profundas permiten volver a la sala de Pit al recargar. `sessionStorage` registra el Pit activo por pestaña como protección ante respuestas tardías, pero nunca concede acceso; PostgreSQL vuelve a validar membresía y rol.
+- Setlists persistentes privados: crear, consultar, renombrar, agregar/quitar tracks y reordenar con revisión esperada.
+- CanonicalTrack mínimo para referencias usadas por Moshpit y tres tracks determinísticos de prueba A/B/C.
+- Tabla ProviderMappings preparada para correspondencias futuras; todavía no hay providers reales.
+- Crear un Pit vacío o desde un Setlist.
+- Al crear desde un Setlist, copiar sus items ordenados en un Live Set independiente y conservar la procedencia de origen.
+- Membresías Admin/Crowd/Viewer e invitaciones de un solo uso con expiración de siete días.
+- Live Set: agregar/quitar/reordenar tracks para Admin y Crowd; Viewer es de solo lectura.
+- PlaybackSession persistida con estado inicial `paused` y modo `individual`; sin reproducción real.
+- D2 Playback Foundation: PlaybackEndpoint independiente por identidad/runtime, estados locales, capacidades y reporte de fallos sin mutar PlaybackSession.
+- Contratos provider-neutral `PlaybackProviderAdapter` y `PlaybackEndpointDriver`, además de `PlaybackCoordinator` para crear planes Individual Playback deterministas (sin dispatch ni audio).
+- Migración SQL, transacciones, idempotency keys, optimistic concurrency y transactional outbox.
+- Worker de outbox y publicación post-commit en canales privados Centrifugo mediante JWT de conexión/suscripción.
+- Snapshot HTTP del Pit para recuperación y carga inicial.
+- Frontend D1 con cuatro secciones principales: Inicio, Explorar, Setlists y Pits; detalle de Setlist; biblioteca e historial de Pits; sala del Pit con Live Set, Crowd, detalles, invitaciones y roles; aceptación de invitaciones por enlace/código; perfil guest.
+- Interfaz de creación y edición de Setlists, incorporación/eliminación/reordenamiento de tracks, creación de Pits vacíos o desde Setlists, y edición colaborativa del Live Set para Admin/Crowd.
+- Navegación de rutas profundas, recuperación de Pit al recargar y suscripción Centrifugo solo mientras se visualiza una sala activa.
+- Catálogo de demostración claramente rotulado; no se presenta como búsqueda externa ni como catálogo de proveedores.
+- UI responsive desktop/tablet/mobile basada en el UI/UX Blueprint aprobado: tema dark, densidad balanced, sidebar desktop y navegación inferior móvil (oculta dentro de la sala del Pit para no competir con sus pestañas internas).
+- Prueba de integración automatizada para independencia Setlist/Live Set, idempotencia y autorización Viewer.
 
-```bash
-pnpm infra:docker:up
-pnpm infra:docker:logs
-pnpm infra:docker:down
-```
+### Phase 1 — Validación en el entorno del usuario
 
-Con Podman y un proveedor Compose configurado:
+El usuario confirmó manualmente en Windows que dos guests reciben los cambios de orden del Live Set, Viewer no puede reordenar, recargar restaura el Pit, Centrifugo reconecta después de una interrupción de red y el build del frontend actualizado funciona. La suite automatizada completa de la última entrega aún no está confirmada.
 
-```bash
-pnpm infra:podman:up
-pnpm infra:podman:logs
-pnpm infra:podman:down
-```
+### Pendiente de D1 / siguientes incrementos
 
-La API queda en `http://localhost:3000`; Centrifugo en `http://localhost:8000`; PostgreSQL en `localhost:5432`. El frontend no se incluye en la Compose stack: puede ejecutarse localmente con `pnpm dev:web` o desplegarse como archivos estáticos.
+- Prueba de carga y pruebas adicionales de concurrencia sobre PostgreSQL.
+- Snapshot/revision gap recovery completamente automatizado en el cliente; la sala ya recupera snapshot al entrar y al recibir publicaciones realtime.
+- Auditoría visual con navegador real en anchos desktop/tablet/mobile y verificación formal de contraste WCAG AA.
+- Creación de Setlist desde un Pit terminado.
+- Edición colaborativa y permisos de Setlist.
+- Gestión avanzada del ciclo de vida de sesión y account linking.
+- Reproducción de audio, dispatch de directivas a drivers y comandos compartidos play/pause/next/previous.
+- Reconciliación completa y recuperación avanzada de endpoints, sincronización de relojes y drift correction.
+- Adaptadores reales de proveedores y Stage Playback.
 
-**No ejecutes `pnpm dev` al mismo tiempo que la API de Compose**, porque ambos intentarían usar el puerto 3000. Para trabajar con el frontend local y backend contenedorizado, utiliza `pnpm dev:web`.
+### Phase 2 — Playback Foundation (D2)
 
-## Despliegue sin Docker en Linux
+- `PlaybackEndpoint` independiente por identidad/runtime, capabilities y estados locales.
+- Registro y reporte autenticado de endpoint por HTTP, con revisión propia e idempotencia.
+- `PlaybackCoordinator` determinista que prepara planes Individual Playback sin despacharlos.
+- Contratos provider-neutral para `PlaybackProviderAdapter` y `PlaybackEndpointDriver`.
+- Las fallas locales no mutan PlaybackSession ni interrumpen otros endpoints.
 
-El backend se compila con TypeScript y se ejecuta como un proceso Node.js normal. El repositorio incluye una unidad de ejemplo `systemd` en `infra/systemd/moshpit-api.service` y una guía en [`docs/deployment.md`](docs/deployment.md).
+### Fuera de D2 / siguientes incrementos
 
-PostgreSQL y Centrifugo también pueden instalarse como servicios nativos de Linux. Ningún cliente Moshpit ni el backend requieren que Docker esté instalado si se utiliza esta modalidad.
+- Búsqueda federada real y adapters Spotify/YouTube/YouTube Music.
+- Importación de bibliotecas de proveedores o del dispositivo.
+- Ejecución real de audio y despacho a endpoint drivers.
+- Sincronización de reloj, drift correction, Stage Playback.
+- Voting, presencia con leases y sucesión de Admin.
 
 ## Estructura
 
 ```text
 moshpit/
-├── .github/workflows/ci.yml
 ├── apps/
 │   ├── api/
-│   │   ├── Dockerfile
-│   │   ├── src/
+│   │   ├── migrations/
+│   │   ├── src/modules/
+│   │   │   ├── identity/
+│   │   │   ├── setlists/
+│   │   │   ├── pits/
+│   │   │   ├── live-sets/
+│   │   │   ├── playback/
+│   │   │   └── realtime/
 │   │   └── test/
 │   └── web/
 ├── packages/contracts/
-├── infra/
-│   ├── centrifugo/
-│   ├── systemd/
-│   └── docker-compose.yml
-├── Start-Moshpit.ps1
+├── infra/centrifugo/
 ├── scripts/windows/
-│   ├── common.ps1
-│   ├── Setup-Database.ps1
-│   ├── run-api.ps1
-│   ├── run-web.ps1
-│   └── start-centrifugo.ps1
-├── docs/
-└── moshpit.code-workspace
+└── docs/
 ```
 
-## Importante: qué NO está implementado todavía
+## Comandos HTTP principales
 
-Este es el principio de Demo 1, no una Demo 1 terminada. Aún no implementa:
+Los endpoints de dominio requieren `Authorization: Bearer <sessionToken>`. Los comandos que cambian estado requieren `Idempotency-Key`. Las mutaciones de agregados requieren `expectedRevision`.
 
-- Creación/autenticación real de guest identities.
-- Creación de Pits, memberships, roles ni Live Set.
-- Persistencia de agregados y migraciones de dominio.
-- Creación, renovación y expiración de PresenceLeases.
-- Sucesión automática de Admin.
-- Emisión de JWT de conexión/suscripción de Centrifugo.
-- Transactional outbox y worker de publicación.
-- RPC Proxy.
-- Reproducción real o integraciones con proveedores musicales.
-- Suites de pruebas de integración y end-to-end.
+- `POST /api/identity/guest`, `GET /api/me`
+- `GET/POST /api/setlists`, `GET/PATCH /api/setlists/:setlistId`
+- `POST /api/setlists/:setlistId/items`, `DELETE /api/setlists/:setlistId/items/:itemId`
+- `PATCH /api/setlists/:setlistId/items/reorder`
+- `GET /api/music/test-tracks`
+- `GET/POST /api/pits`, `GET /api/pits/:pitId/snapshot`
+- `POST /api/pits/:pitId/invitations`, `POST /api/pit-invitations/accept`
+- `POST/DELETE /api/pits/:pitId/live-set/items`, `PATCH /api/pits/:pitId/live-set/items/reorder`
+- `GET /api/realtime/connection-token`, `GET /api/pits/:pitId/realtime-token`
+- `POST/GET /api/pits/:pitId/playback/endpoints`, `PATCH /api/pits/:pitId/playback/endpoints/:endpointId/state`
+- `POST /api/pits/:pitId/end`
 
-Estos elementos se deben implementar después de validar los contratos y completar los siguientes pasos de Demo 1.
+## Decisiones temporales de D1
 
-## Decisiones técnicas y límites del scaffold
+- Setlists son privados y solo el propietario puede editarlos; sharing/collaborators se amplían en D5.
+- Un Pit tiene un único Live Set activo en D1.
+- Pit invite codes son de un solo uso, roles Crowd o Viewer y vencen en siete días.
+- La sesión guest usa bearer token aleatorio; el servidor persiste solo su SHA-256. El navegador conserva el token por 30 días renovables. No es un mecanismo de cuenta ni de recuperación en otro dispositivo.
+- El orden es una lista densa de posiciones enteras. El cliente envía la lista completa de IDs con `expectedRevision`; el backend bloquea el agregado, valida la permutación completa y reescribe posiciones de forma atómica.
+- Las migraciones son SQL versionadas y ejecutadas con un runner pequeño sobre `pg`; no se ha elegido ORM.
 
-- Fastify es el único backend de dominio y se despliega como monolito modular.
-- Centrifugo es infraestructura realtime independiente; no es un servicio de dominio.
-- PostgreSQL es la fuente de verdad.
-- El scaffold usa el driver `pg` directamente para el health check y deja el acceso a datos aislado. **No se ha seleccionado un ORM**.
-- React + Vite se usa como cliente web inicial; Vite es una elección de tooling provisional.
-- La autenticación final y el mecanismo de sesión todavía no están implementados ni cerrados.
-- Los valores de heartbeat/TTL de PresenceLease son propuestas iniciales, no parámetros definitivos.
-- Docker/Podman son opciones de ejecución y empaquetado, no requisitos del producto.
+Consulta `docs/phase2-playback-foundation.md` para los contratos y el alcance D2.
 
-Consulta `docs/decisions.md` antes de ampliar el alcance.
+Consulta `docs/PRODUCT_ENGINEERING_BLUEPRINT_v0.1.md`, `docs/ui-ux-blueprint/MOSHPIT_UI_UX_BLUEPRINT_v0.1.md`, `docs/demo-1-scope.md`, `docs/decisions.md`, `docs/frontend-phase1.md` y `docs/phase1-implementation-status.md` para el alcance y los límites actuales.
