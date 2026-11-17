@@ -1,0 +1,29 @@
+{
+  "client": {
+    "token": {
+      "hmac_secret_key": "local-dev-token-secret-change-before-use"
+    },
+    "allowed_origins": [
+      "http://localhost:5173"
+    ]
+  },
+  "http_api": {
+    "key": "local-dev-api-key-change-before-use"
+  },
+  "channel": {
+    "namespaces": [
+      {
+        "name": "pit",
+        "allow_subscribe_for_client": false,
+        "allow_publish_for_client": false,
+        "allow_publish_for_subscriber": false
+      },
+      {
+        "name": "identity",
+        "allow_subscribe_for_client": false,
+        "allow_publish_for_client": false,
+        "allow_publish_for_subscriber": false
+      }
+    ]
+  }
+}

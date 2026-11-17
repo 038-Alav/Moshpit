@@ -1,0 +1,22 @@
+{
+  "name": "moshpit",
+  "private": true,
+  "version": "0.1.0-demo1-foundation",
+  "packageManager": "pnpm@10.34.9",
+  "scripts": {
+    "dev": "pnpm --parallel --filter @moshpit/api --filter @moshpit/web dev",
+    "dev:api": "pnpm --filter @moshpit/api dev",
+    "dev:web": "pnpm --filter @moshpit/web dev",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm -r --if-present test",
+    "build": "pnpm -r build",
+    "verify": "pnpm typecheck && pnpm test && pnpm build",
+    "infra:docker:up": "docker compose --env-file .env -f infra/docker-compose.yml up -d --build",
+    "infra:docker:down": "docker compose --env-file .env -f infra/docker-compose.yml down",
+    "infra:docker:logs": "docker compose --env-file .env -f infra/docker-compose.yml logs -f",
+    "infra:podman:up": "podman compose --env-file .env -f infra/docker-compose.yml up -d --build",
+    "infra:podman:down": "podman compose --env-file .env -f infra/docker-compose.yml down",
+    "infra:podman:logs": "podman compose --env-file .env -f infra/docker-compose.yml logs -f",
+    "db:migrate": "pnpm --filter @moshpit/api db:migrate"
+  }
+}

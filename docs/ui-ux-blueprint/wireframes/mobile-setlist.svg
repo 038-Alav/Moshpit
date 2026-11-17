@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="844" viewBox="0 0 390 844">
+<defs><linearGradient id="coverA" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#7053B8"/><stop offset="1" stop-color="#29243D"/></linearGradient><linearGradient id="coverB" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#3C7D83"/><stop offset="1" stop-color="#1D343D"/></linearGradient><linearGradient id="coverC" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#B36A54"/><stop offset="1" stop-color="#4C292D"/></linearGradient></defs>
+<title>Moshpit — Setlist (mobile)</title><desc>Wireframe móvil de detalle de Setlist</desc>
+<rect width="390" height="844" fill="#0D0E12"/>
+<path d="M0 64 L390 64" stroke="#2D323D" stroke-width="1" fill="none"/>
+<path d="M29.0 24.6 L22.0 31 L29.0 37.4" fill="none" stroke="#F3F4F7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="48" y="37" fill="#F3F4F7" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15" font-weight="650" text-anchor="start">Noches largas</text>
+<circle cx="364.6" cy="31" r="1.8" fill="#A5AAB6"/>
+<circle cx="369.0" cy="31" r="1.8" fill="#A5AAB6"/>
+<circle cx="373.40000000000003" cy="31" r="1.8" fill="#A5AAB6"/>
+<rect x="18" y="87" width="112" height="112" rx="8" fill="url(#coverA)"/>
+<circle cx="76.24000000000001" cy="140.76" r="25.76" fill="none" stroke="#FFFFFF" stroke-opacity=".28" stroke-width="2"/>
+<circle cx="76.24000000000001" cy="140.76" r="7.840000000000001" fill="#FFFFFF" fill-opacity=".38"/>
+<text x="148" y="111" fill="#9B7BFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="9" font-weight="700" text-anchor="start">SETLIST PRIVADO</text>
+<text x="148" y="143" fill="#F3F4F7" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="21" font-weight="750" text-anchor="start">Noches largas</text>
+<text x="148" y="165" fill="#A5AAB6" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="10" font-weight="400" text-anchor="start">18 canciones</text>
+<rect x="148" y="180" width="116" height="40" rx="10" fill="#9B7BFF" stroke="#9B7BFF" stroke-width="1"/>
+<text x="206.0" y="205" fill="#FFFFFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12" font-weight="650" text-anchor="middle">Crear un Pit</text>
+<path d="M18 244 L372 244" stroke="#2D323D" stroke-width="1" fill="none"/>
+<text x="18" y="274" fill="#F3F4F7" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" text-anchor="start">Canciones</text>
+<text x="372" y="274" fill="#9B7BFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" text-anchor="end">Agregar</text>
+<rect x="18" y="300" width="44" height="44" rx="8" fill="url(#coverA)"/>
+<circle cx="40.88" cy="321.12" r="10.120000000000001" fill="none" stroke="#FFFFFF" stroke-opacity=".28" stroke-width="2"/>
+<circle cx="40.88" cy="321.12" r="3.08" fill="#FFFFFF" fill-opacity=".38"/>
+<text x="77" y="319" fill="#747B89" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="10" font-weight="500" text-anchor="start">01</text>
+<text x="104" y="316" fill="#F3F4F7" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="start">Midnight City</text>
+<text x="104" y="335" fill="#A5AAB6" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">M83</text>
+<text x="254" y="323" fill="#747B89" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="10" font-weight="500" text-anchor="start">4:03</text>
+<text x="308" y="323" fill="#A5AAB6" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="500" text-anchor="middle">↕</text>
+<text x="347" y="323" fill="#A5AAB6" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="17" font-weight="700" text-anchor="middle">···</text>
+<path d="M18 351 L372 351" stroke="#2D323D" stroke-width="1" fill="none"/>
+<rect x="18" y="369" width="44" height="44" rx="8" fill="url(#coverB)"/>
+<circle cx="40.88" cy="390.12" r="10.120000000000001" fill="none" stroke="#FFFFFF" stroke-opacity=".28" stroke-width="2"/>
+<circle cx="40.88" cy="390.12" r="3.08" fill="#FFFFFF" fill-opacity=".38"/>
+<text x="77" y="388" fill="#747B89" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="10" font-weight="500" text-anchor="start">02</text>
+<text x="104" y="385" fill="#F3F4F7" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="start">Archie, Marry Me</text>
+<text x="104" y="404" fill="#A5AAB6" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">Alvvays</text>
+<text x="254" y="392" fill="#747B89" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="10" font-weight="500" text-anchor="start">3:16</text>
+<text x="308" y="392" fill="#A5AAB6" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="500" text-anchor="middle">↕</text>
+<text x="347" y="392" fill="#A5AAB6" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="17" font-weight="700" text-anchor="middle">···</text>
+<path d="M18 420 L372 420" stroke="#2D323D" stroke-width="1" fill="none"/>
+<rect x="18" y="438" width="44" height="44" rx="8" fill="url(#coverC)"/>
+<circle cx="40.88" cy="459.12" r="10.120000000000001" fill="none" stroke="#FFFFFF" stroke-opacity=".28" stroke-width="2"/>
+<circle cx="40.88" cy="459.12" r="3.08" fill="#FFFFFF" fill-opacity=".38"/>
+<text x="77" y="457" fill="#747B89" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="10" font-weight="500" text-anchor="start">03</text>
+<text x="104" y="454" fill="#F3F4F7" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="start">The Less I Know…</text>
+<text x="104" y="473" fill="#A5AAB6" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">Tame Impala</text>
+<text x="254" y="461" fill="#747B89" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="10" font-weight="500" text-anchor="start">3:36</text>
+<text x="308" y="461" fill="#A5AAB6" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="500" text-anchor="middle">↕</text>
+<text x="347" y="461" fill="#A5AAB6" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="17" font-weight="700" text-anchor="middle">···</text>
+<path d="M18 489 L372 489" stroke="#2D323D" stroke-width="1" fill="none"/>
+<rect x="18" y="507" width="44" height="44" rx="8" fill="#353A49"/>
+<circle cx="40.88" cy="528.12" r="10.120000000000001" fill="none" stroke="#FFFFFF" stroke-opacity=".28" stroke-width="2"/>
+<circle cx="40.88" cy="528.12" r="3.08" fill="#FFFFFF" fill-opacity=".38"/>
+<text x="77" y="526" fill="#747B89" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="10" font-weight="500" text-anchor="start">04</text>
+<text x="104" y="523" fill="#F3F4F7" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="start">A Walk</text>
+<text x="104" y="542" fill="#A5AAB6" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">Tycho</text>
+<text x="254" y="530" fill="#747B89" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="10" font-weight="500" text-anchor="start">5:16</text>
+<text x="308" y="530" fill="#A5AAB6" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="500" text-anchor="middle">↕</text>
+<text x="347" y="530" fill="#A5AAB6" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="17" font-weight="700" text-anchor="middle">···</text>
+<path d="M18 558 L372 558" stroke="#2D323D" stroke-width="1" fill="none"/>
+<rect x="18" y="576" width="44" height="44" rx="8" fill="url(#coverA)"/>
+<circle cx="40.88" cy="597.12" r="10.120000000000001" fill="none" stroke="#FFFFFF" stroke-opacity=".28" stroke-width="2"/>
+<circle cx="40.88" cy="597.12" r="3.08" fill="#FFFFFF" fill-opacity=".38"/>
+<text x="77" y="595" fill="#747B89" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="10" font-weight="500" text-anchor="start">05</text>
+<text x="104" y="592" fill="#F3F4F7" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="start">Oblivion</text>
+<text x="104" y="611" fill="#A5AAB6" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">Grimes</text>
+<text x="254" y="599" fill="#747B89" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="10" font-weight="500" text-anchor="start">4:11</text>
+<text x="308" y="599" fill="#A5AAB6" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="500" text-anchor="middle">↕</text>
+<text x="347" y="599" fill="#A5AAB6" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="17" font-weight="700" text-anchor="middle">···</text>
+<path d="M18 627 L372 627" stroke="#2D323D" stroke-width="1" fill="none"/>
+<rect x="18" y="645" width="44" height="44" rx="8" fill="url(#coverB)"/>
+<circle cx="40.88" cy="666.12" r="10.120000000000001" fill="none" stroke="#FFFFFF" stroke-opacity=".28" stroke-width="2"/>
+<circle cx="40.88" cy="666.12" r="3.08" fill="#FFFFFF" fill-opacity=".38"/>
+<text x="77" y="664" fill="#747B89" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="10" font-weight="500" text-anchor="start">06</text>
+<text x="104" y="661" fill="#F3F4F7" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="start">Open Eye Signal</text>
+<text x="104" y="680" fill="#A5AAB6" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">Jon Hopkins</text>
+<text x="254" y="668" fill="#747B89" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="10" font-weight="500" text-anchor="start">7:48</text>
+<text x="308" y="668" fill="#A5AAB6" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="500" text-anchor="middle">↕</text>
+<text x="347" y="668" fill="#A5AAB6" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="17" font-weight="700" text-anchor="middle">···</text>
+<path d="M18 696 L372 696" stroke="#2D323D" stroke-width="1" fill="none"/>
+<rect x="0" y="778" width="390" height="66" rx="0" fill="#12141A" stroke="#2D323D" stroke-width="1"/>
+<path d="M41.52 798 L48 791.88 L54.48 798 V804.12 H49.8 V799.44 H46.2 V804.12 H41.52 Z" fill="none" stroke="#A5AAB6" stroke-width="1.8" stroke-linejoin="round"/>
+<text x="48" y="828" fill="#747B89" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="9" font-weight="600" text-anchor="middle">Inicio</text>
+<circle cx="146" cy="798" r="6.4799999999999995" fill="none" stroke="#A5AAB6" stroke-width="1.8"/><path d="M149.6 794.4 L146.54 799.44 L142.4 801.6 L145.46 796.56 Z" fill="none" stroke="#A5AAB6" stroke-width="1.8"/>
+<text x="146" y="828" fill="#747B89" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="9" font-weight="600" text-anchor="middle">Explorar</text>
+<circle cx="238.6" cy="793.5" r="1.3" fill="#9B7BFF"/><path d="M241.84 793.5 H249.4" stroke="#9B7BFF" stroke-width="1.8" stroke-linecap="round"/>
+<circle cx="238.6" cy="798.0" r="1.3" fill="#9B7BFF"/><path d="M241.84 798.0 H249.4" stroke="#9B7BFF" stroke-width="1.8" stroke-linecap="round"/>
+<circle cx="238.6" cy="802.5" r="1.3" fill="#9B7BFF"/><path d="M241.84 802.5 H249.4" stroke="#9B7BFF" stroke-width="1.8" stroke-linecap="round"/>
+<text x="244" y="828" fill="#F3F4F7" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="9" font-weight="600" text-anchor="middle">Setlists</text>
+<circle cx="342" cy="795.84" r="2.88" fill="none" stroke="#A5AAB6" stroke-width="1.8"/><path d="M335.88 803.4 C336.6 798.36 347.4 798.36 348.12 803.4" fill="none" stroke="#A5AAB6" stroke-width="1.8" stroke-linecap="round"/>
+<text x="342" y="828" fill="#747B89" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="9" font-weight="600" text-anchor="middle">Pits</text>
+</svg>

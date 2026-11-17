@@ -1,0 +1,49 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Moshpit: setup database (Windows)",
+      "type": "shell",
+      "command": "powershell -ExecutionPolicy Bypass -File scripts/windows/Setup-Database.ps1",
+      "problemMatcher": []
+    },
+    {
+      "label": "Moshpit: start all (Windows)",
+      "type": "shell",
+      "command": "powershell -ExecutionPolicy Bypass -File Start-Moshpit.ps1",
+      "problemMatcher": []
+    },
+    {
+      "label": "Moshpit: dev API",
+      "type": "shell",
+      "command": "pnpm dev:api",
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "Moshpit: dev web",
+      "type": "shell",
+      "command": "pnpm dev:web",
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "Moshpit: typecheck",
+      "type": "shell",
+      "command": "pnpm typecheck",
+      "problemMatcher": []
+    },
+    {
+      "label": "Moshpit: test",
+      "type": "shell",
+      "command": "pnpm test",
+      "problemMatcher": []
+    },
+    {
+      "label": "Moshpit: build",
+      "type": "shell",
+      "command": "pnpm build",
+      "problemMatcher": []
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Typecheck, PostgreSQL integration tests and build
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_DB: moshpit
+          POSTGRES_USER: moshpit
+          POSTGRES_PASSWORD: moshpit_dev
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U moshpit -d moshpit"
+          --health-interval 5s
+          --health-timeout 3s
+          --health-retries 10
+    env:
+      MOSHPIT_TEST_DATABASE_URL: postgresql://moshpit:moshpit_dev@localhost:5432/moshpit
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.34.9
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      # The repository currently does not commit a pnpm lockfile. Once one is
+      # introduced, switch this to `pnpm install --frozen-lockfile`.
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
+
+      - name: Typecheck
+        run: pnpm typecheck
+
+      - name: Test
+        run: pnpm test
+
+      - name: Build
+        run: pnpm build
+
+      - name: Validate optional API container image
+        run: docker build --file apps/api/Dockerfile --tag moshpit-api:${GITHUB_SHA} .
+
+  validate-windows-scripts:
+    name: Validate PowerShell setup scripts
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Parse PowerShell scripts
+        shell: powershell
+        run: |
+          $scripts = Get-ChildItem -Path . -Filter *.ps1 -Recurse -File
+          foreach ($script in $scripts) {
+            $tokens = $null
+            $errors = $null
+            [System.Management.Automation.Language.Parser]::ParseFile(
+              $script.FullName,
+              [ref]$tokens,
+              [ref]$errors
+            ) | Out-Null
+
+            if ($errors.Count -gt 0) {
+              $errors | ForEach-Object { Write-Error $_ }
+              throw "PowerShell syntax validation failed: $($script.FullName)"
+            }
+          }
+
+          Write-Host "Parsed $($scripts.Count) PowerShell scripts successfully."

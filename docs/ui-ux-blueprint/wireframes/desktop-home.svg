@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="960" viewBox="0 0 1440 960">
+<defs><linearGradient id="coverA" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#7053B8"/><stop offset="1" stop-color="#29243D"/></linearGradient><linearGradient id="coverB" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#3C7D83"/><stop offset="1" stop-color="#1D343D"/></linearGradient><linearGradient id="coverC" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#B36A54"/><stop offset="1" stop-color="#4C292D"/></linearGradient></defs>
+<title>Moshpit — Inicio (desktop)</title><desc>Wireframe de la pantalla de inicio desktop</desc>
+<rect width="1440" height="960" fill="#0D0E12"/>
+<rect x="0" y="0" width="236" height="960" rx="0" fill="#12141A"/>
+<rect x="28" y="25" width="34" height="34" rx="10" fill="#9B7BFF"/>
+<text x="45" y="48" fill="#FFFFFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18" font-weight="800" text-anchor="middle">M</text>
+<text x="74" y="48" fill="#F3F4F7" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" font-weight="800" text-anchor="start">MOSHPIT</text>
+<text x="28" y="103" fill="#747B89" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="10" font-weight="700" text-anchor="start">MENÚ</text>
+<rect x="16" y="122" width="204" height="44" rx="10" fill="#2D2545"/>
+<path d="M30.52 144 L37 137.88 L43.48 144 V150.12 H38.8 V145.44 H35.2 V150.12 H30.52 Z" fill="none" stroke="#9B7BFF" stroke-width="1.8" stroke-linejoin="round"/>
+<text x="61" y="150" fill="#F3F4F7" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="650" text-anchor="start">Inicio</text>
+<circle cx="37" cy="196" r="6.4799999999999995" fill="none" stroke="#A5AAB6" stroke-width="1.8"/><path d="M40.6 192.4 L37.54 197.44 L33.4 199.6 L36.46 194.56 Z" fill="none" stroke="#A5AAB6" stroke-width="1.8"/>
+<text x="61" y="202" fill="#A5AAB6" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="start">Explorar</text>
+<circle cx="31.6" cy="243.5" r="1.3" fill="#A5AAB6"/><path d="M34.84 243.5 H42.4" stroke="#A5AAB6" stroke-width="1.8" stroke-linecap="round"/>
+<circle cx="31.6" cy="248.0" r="1.3" fill="#A5AAB6"/><path d="M34.84 248.0 H42.4" stroke="#A5AAB6" stroke-width="1.8" stroke-linecap="round"/>
+<circle cx="31.6" cy="252.5" r="1.3" fill="#A5AAB6"/><path d="M34.84 252.5 H42.4" stroke="#A5AAB6" stroke-width="1.8" stroke-linecap="round"/>
+<text x="61" y="254" fill="#A5AAB6" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="start">Setlists</text>
+<circle cx="37" cy="297.84" r="2.88" fill="none" stroke="#A5AAB6" stroke-width="1.8"/><path d="M30.88 305.4 C31.6 300.36 42.4 300.36 43.12 305.4" fill="none" stroke="#A5AAB6" stroke-width="1.8" stroke-linecap="round"/>
+<text x="61" y="306" fill="#A5AAB6" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="500" text-anchor="start">Pits</text>
+<path d="M22 350 L214 350" stroke="#2D323D" stroke-width="1" fill="none"/>
+<text x="28" y="379" fill="#747B89" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="10" font-weight="700" text-anchor="start">PITS RECIENTES</text>
+<text x="28" y="407" fill="#F3F4F7" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12" font-weight="550" text-anchor="start">Viernes en casa</text>
+<text x="28" y="424" fill="#65D6A2" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="10" font-weight="400" text-anchor="start">En curso</text>
+<text x="28" y="461" fill="#F3F4F7" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12" font-weight="550" text-anchor="start">Indie / tarde</text>
+<text x="28" y="478" fill="#747B89" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="10" font-weight="400" text-anchor="start">Finalizado</text>
+<path d="M22 876 L214 876" stroke="#2D323D" stroke-width="1" fill="none"/>
+<text x="28" y="911" fill="#A5AAB6" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="550" text-anchor="start">◉  Invitado · Exodia</text>
+<text x="28" y="936" fill="#747B89" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="10" font-weight="400" text-anchor="start">Configuración</text>
+<path d="M264 72 L1412 72" stroke="#2D323D" stroke-width="1" fill="none"/>
+<rect x="264" y="22" width="560" height="38" rx="19" fill="#1E222B" stroke="#2D323D" stroke-width="1"/>
+<circle cx="288" cy="39" r="5.040000000000001" fill="none" stroke="#747B89" stroke-width="1.8"/><path d="M293 44 L296.12 47.12" stroke="#747B89" stroke-width="1.8" stroke-linecap="round"/>
+<text x="309" y="46" fill="#747B89" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12" font-weight="400" text-anchor="start">Buscar canciones, artistas y Setlists</text>
+<rect x="1268" y="28" width="86" height="25" rx="12" fill="#1E222B"/>
+<text x="1311.0" y="45" fill="#A5AAB6" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">INVITADO</text>
+<rect x="1366" y="24" width="32" height="32" rx="16" fill="#252A35"/>
+<text x="1382" y="45" fill="#F3F4F7" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">E</text>
+<text x="264" y="126" fill="#9B7BFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="10" font-weight="700" text-anchor="start">TU ESPACIO MUSICAL</text>
+<text x="264" y="164" fill="#F3F4F7" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="30" font-weight="750" text-anchor="start">Buenas noches</text>
+<text x="264" y="190" fill="#A5AAB6" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="400" text-anchor="start">Tu música, tus Setlists y los Pits que compartes.</text>
+<rect x="264" y="220" width="1118" height="138" rx="16" fill="#171A21" stroke="#2D323D" stroke-width="1"/>
+<rect x="288" y="244" width="58" height="58" rx="14" fill="#2D2545"/>
+<text x="317" y="282" fill="#9B7BFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="28" font-weight="600" text-anchor="middle">♫</text>
+<text x="366" y="258" fill="#F3F4F7" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" text-anchor="start">¿Qué hacemos hoy?</text>
+<text x="366" y="282" fill="#A5AAB6" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12" font-weight="400" text-anchor="start">Empieza desde un Setlist o crea un Pit vacío.</text>
+<rect x="1044" y="268" width="152" height="40" rx="10" fill="#9B7BFF" stroke="#9B7BFF" stroke-width="1"/>
+<text x="1120.0" y="293" fill="#FFFFFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12" font-weight="650" text-anchor="middle">Crear Setlist</text>
+<rect x="1208" y="268" width="150" height="40" rx="10" fill="#1E222B" stroke="#2D323D" stroke-width="1"/>
+<text x="1283.0" y="293" fill="#F3F4F7" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12" font-weight="650" text-anchor="middle">Crear un Pit</text>
+<text x="264" y="396" fill="#9B7BFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="10" font-weight="700" text-anchor="start">EN COMUNIDAD</text>
+<text x="264" y="434" fill="#F3F4F7" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="30" font-weight="750" text-anchor="start">Pits activos</text>
+<text x="264" y="460" fill="#A5AAB6" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="400" text-anchor="start">Vuelve a una sesión que sigue en marcha.</text>
+<rect x="264" y="470" width="540" height="112" rx="14" fill="#171A21" stroke="#2D323D" stroke-width="1"/>
+<rect x="282" y="493" width="66" height="66" rx="8" fill="url(#coverB)"/>
+<circle cx="316.32" cy="524.68" r="15.180000000000001" fill="none" stroke="#FFFFFF" stroke-opacity=".28" stroke-width="2"/>
+<circle cx="316.32" cy="524.68" r="4.62" fill="#FFFFFF" fill-opacity=".38"/>
+<text x="364" y="480" fill="#F3F4F7" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15" font-weight="650" text-anchor="start">Viernes en casa</text>
+<text x="364" y="503" fill="#A5AAB6" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">3 personas · 8 canciones en el Live Set</text>
+<rect x="364" y="516" width="72" height="25" rx="12" fill="#2D2545"/>
+<text x="400.0" y="533" fill="#9B7BFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">EN CURSO</text>
+<rect x="654" y="487" width="128" height="40" rx="10" fill="#1E222B" stroke="#2D323D" stroke-width="1"/>
+<text x="718.0" y="512" fill="#F3F4F7" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12" font-weight="650" text-anchor="middle">Volver al Pit</text>
+<rect x="822" y="450" width="560" height="112" rx="14" fill="#171A21" stroke="#2D323D" stroke-width="1"/>
+<rect x="840" y="472" width="66" height="66" rx="8" fill="url(#coverC)"/>
+<circle cx="874.32" cy="503.68" r="15.180000000000001" fill="none" stroke="#FFFFFF" stroke-opacity=".28" stroke-width="2"/>
+<circle cx="874.32" cy="503.68" r="4.62" fill="#FFFFFF" fill-opacity=".38"/>
+<text x="922" y="480" fill="#F3F4F7" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15" font-weight="650" text-anchor="start">Indie / tarde</text>
+<text x="922" y="503" fill="#A5AAB6" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">Finalizado · 12 canciones</text>
+<rect x="922" y="516" width="90" height="25" rx="12" fill="#252A35"/>
+<text x="967.0" y="533" fill="#747B89" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">HISTORIAL</text>
+<text x="264" y="627" fill="#9B7BFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="10" font-weight="700" text-anchor="start">TU BIBLIOTECA</text>
+<text x="264" y="665" fill="#F3F4F7" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="30" font-weight="750" text-anchor="start">Setlists recientes</text>
+<text x="264" y="691" fill="#A5AAB6" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="400" text-anchor="start">Colecciones que puedes volver a compartir.</text>
+<rect x="264" y="663" width="100" height="100" rx="8" fill="url(#coverA)"/>
+<circle cx="316.0" cy="711.0" r="23.0" fill="none" stroke="#FFFFFF" stroke-opacity=".28" stroke-width="2"/>
+<circle cx="316.0" cy="711.0" r="7.000000000000001" fill="#FFFFFF" fill-opacity=".38"/>
+<text x="264" y="789" fill="#F3F4F7" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="650" text-anchor="start">Noches largas</text>
+<text x="264" y="809" fill="#A5AAB6" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">18 canciones</text>
+<rect x="544" y="663" width="100" height="100" rx="8" fill="url(#coverC)"/>
+<circle cx="596.0" cy="711.0" r="23.0" fill="none" stroke="#FFFFFF" stroke-opacity=".28" stroke-width="2"/>
+<circle cx="596.0" cy="711.0" r="7.000000000000001" fill="#FFFFFF" fill-opacity=".38"/>
+<text x="544" y="789" fill="#F3F4F7" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="650" text-anchor="start">Post-rock</text>
+<text x="544" y="809" fill="#A5AAB6" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">12 canciones</text>
+<rect x="824" y="663" width="100" height="100" rx="8" fill="url(#coverB)"/>
+<circle cx="876.0" cy="711.0" r="23.0" fill="none" stroke="#FFFFFF" stroke-opacity=".28" stroke-width="2"/>
+<circle cx="876.0" cy="711.0" r="7.000000000000001" fill="#FFFFFF" fill-opacity=".38"/>
+<text x="824" y="789" fill="#F3F4F7" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="650" text-anchor="start">Para compartir</text>
+<text x="824" y="809" fill="#A5AAB6" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">24 canciones</text>
+<rect x="1104" y="663" width="100" height="100" rx="8" fill="#353A49"/>
+<circle cx="1156.0" cy="711.0" r="23.0" fill="none" stroke="#FFFFFF" stroke-opacity=".28" stroke-width="2"/>
+<circle cx="1156.0" cy="711.0" r="7.000000000000001" fill="#FFFFFF" fill-opacity=".38"/>
+<text x="1104" y="789" fill="#F3F4F7" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="650" text-anchor="start">Descubrimientos</text>
+<text x="1104" y="809" fill="#A5AAB6" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">7 canciones</text>
+<rect x="1244" y="617" width="136" height="25" rx="12" fill="#1E222B"/>
+<text x="1312.0" y="634" fill="#A5AAB6" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="10" font-weight="600" text-anchor="middle">VER TODOS LOS SETLISTS</text>
+</svg>

@@ -1,0 +1,21 @@
+[Unit]
+Description=Moshpit Fastify API
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=moshpit
+Group=moshpit
+WorkingDirectory=/opt/moshpit
+EnvironmentFile=/etc/moshpit/api.env
+ExecStart=/usr/bin/node /opt/moshpit/apps/api/dist/apps/api/src/server.js
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+
+[Install]
+WantedBy=multi-user.target

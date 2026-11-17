@@ -1,0 +1,19 @@
+[Unit]
+Description=Moshpit Centrifugo Realtime Transport
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=moshpit
+Group=moshpit
+ExecStart=/usr/local/bin/centrifugo -c /etc/moshpit/centrifugo/config.json
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+
+[Install]
+WantedBy=multi-user.target
